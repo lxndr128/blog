@@ -15,27 +15,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_141156) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.string "subject_type", null: false
     t.bigint "subject_id", null: false
-    t.integer "post_id"
-    t.text "body"
+    t.integer "post_id", null: false
+    t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_type", "subject_id"], name: "index_comments_on_subject"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
-    t.text "body"
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "subscriptions", force: :cascade do |t|
-    t.integer "subscriber_id"
-    t.integer "publisher_id"
+    t.integer "subscriber_id", null: false
+    t.integer "publisher_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_141156) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "username"
+    t.string "username", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
