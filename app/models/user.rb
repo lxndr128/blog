@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :subscribers_relations, class_name: 'Subscription', foreign_key: :publisher_id, dependent: :destroy
   has_many :subscribers, class_name: 'User', through: :subscribers_relations 
   has_many :publishers, class_name: 'User', through: :publishers_relations
+  has_many :comments
 end
