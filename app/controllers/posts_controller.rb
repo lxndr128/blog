@@ -6,8 +6,12 @@ class PostsController < ApplicationController
   def to_merge = { user_id: current_user.id } 
 
   def collection
-    @collection = params[:publisher_id] ? Post.where(user_id: params[:publisher_id]) : Post.all
+    @collection = params[:subscriptions] ? Post.where(user: current_user.publishers) : Post.all
     @collection = @collection.order(created_at: :desc)
+  end
+
+  def my_subscriptions
+    Post.where(user_id: current_user.publishers.pluck(:id))
   end
 
   def permitted_attributes = [:title, :body]
