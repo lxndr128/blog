@@ -9,7 +9,7 @@ class ApplicationController < ActionController::API
 
   def show = render_json(@resource)
 
-  def create = render_json(model.create(params.permit(permitted_attributes).merge(user_id: current_user.id)))
+  def create = render_json(model.create!(params.permit(permitted_attributes).merge(to_merge)))
 
   def destroy
     @resource.destroy!

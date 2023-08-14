@@ -1,9 +1,9 @@
 class SubscriptionsController < ApplicationController
   include Resources
 
-  def create = render_json(Subscription.create(params.permit(permitted_attributes).merge(subscriber_id: current_user.id)))
-
   private
+
+  def to_merge = { subscriber_id: current_user.id } 
 
   def collection
     return @collection = current_user.subscribers_relations if params[:my_subscribers]
