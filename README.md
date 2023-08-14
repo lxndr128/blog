@@ -1,24 +1,13 @@
-# README
+# Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Тестовое задание. Бэкенд блога с возможностью создавать посты, подписываться на авторов, оставлять комментарии.
 
-Things you may want to cover:
+## Запуск
+В папке проекта:
 
-* Ruby version
+    $ make setup
 
-* System dependencies
+    $ make up
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Запросы
+Находятся в файле blog_collection.json  (postman)
