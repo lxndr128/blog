@@ -5,9 +5,7 @@
 ## Запуск
 В папке проекта:
 
-    $ make setup
-
-    $ make up
+    $ make first_start
 
 ## Запросы
 Находятся в файле blog_collection.json  (postman)

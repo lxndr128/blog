@@ -1,3 +1,7 @@
+first_start:
+	make setup
+	make up
+
 setup:
 	cp .env.example .env
 	docker-compose build

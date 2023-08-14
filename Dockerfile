@@ -10,3 +10,5 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
 WORKDIR /usr/src/app
+
+CMD ["rails", "s", "-b", "0.0.0.0"]

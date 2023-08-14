@@ -10,9 +10,5 @@ class PostsController < ApplicationController
     @collection = @collection.order(created_at: :desc)
   end
 
-  def my_subscriptions
-    Post.where(user_id: current_user.publishers.pluck(:id))
-  end
-
   def permitted_attributes = [:title, :body]
 end
