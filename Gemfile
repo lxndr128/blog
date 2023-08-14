@@ -8,6 +8,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'pg', '~> 1.5', '>= 1.5.3'
 gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'blueprinter'
+gem 'cancancan'
 
 group :development, :test do
   gem 'listen', '~> 3.8'
