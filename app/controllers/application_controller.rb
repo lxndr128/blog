@@ -11,7 +11,10 @@ class ApplicationController < ActionController::API
 
   def create = render_json(model.create(params.permit(permitted_attributes).merge(user_id: current_user.id)))
 
-  def destroy = render_json(@resource.destroy!)
+  def destroy
+    @resource.destroy!
+    render json: { result: :success }
+  end
 
   def update
     @resource.update!(params.permit(permitted_attributes))
